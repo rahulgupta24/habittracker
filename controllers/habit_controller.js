@@ -1,7 +1,7 @@
 const Habit = require('../models/habit');
 
-module.exports.load = function (request, response) {
-    Habit.find({}, function (err, habits) {
+module.exports.load = async function (request, response) {
+    await Habit.find({}, function (err, habits) {
         if (err) {
             console.log("Error in fetching habits from DB");
             return;
